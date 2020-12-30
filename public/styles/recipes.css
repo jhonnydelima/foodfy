@@ -20,7 +20,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
@@ -30,12 +30,13 @@ header {
 
 .links .logo {
     height: 26.9px;
-    margin: 30px 120px 50px 0;
+    margin-top: 31px;
+    margin-bottom: 50px;
     cursor: pointer;
 }
 
 .links .menu {
-    margin: 38px 0 56px;
+    margin: 38px 0 56px 120px;
 }
 
 .links .menu a {
@@ -55,14 +56,8 @@ header {
 }
 
 #wrapper {
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
-}
-
-#wrapper h2 {
-    color: var(--color-text);
-    line-height: 28px;
-    margin-bottom: 20px;
 }
 
 /* === RECIPES === */
@@ -87,6 +82,7 @@ header {
     color: var(--color-text);
     font-size: 18px;
     line-height: 21px;
+    margin-bottom: 5px;
 }
 
 .recipe__chef-name {
@@ -139,12 +135,13 @@ header {
 .modal-content img {
     width: 600px;
     height: 200px;
-    margin: 30px;
+    margin: 30px auto 20px;
     border-radius: 15px;
 }
 
 .modal-content .recipe-name {
     color: var(--color-text);
+    font-weight: normal;
     text-align: center;
     line-height: 28px;
 }
@@ -154,6 +151,7 @@ header {
     font-size: 18px;
     line-height: 21px;
     text-align: center;
+    margin-top: 5px;
 }
 
 footer {

@@ -19,7 +19,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
@@ -29,12 +29,13 @@ header {
 
 .links .logo {
     height: 26.9px;
-    margin: 30px 120px 50px 0;
+    margin-top: 36px;
+    margin-bottom: 50px;
     cursor: pointer;
 }
 
 .links .menu {
-    margin: 38px 0 56px;
+    margin: 38px 0 56px 120px;
 }
 
 .links .menu a {
@@ -54,7 +55,7 @@ header {
 }
 
 #wrapper {
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
@@ -66,7 +67,6 @@ header {
 
 #wrapper h3 {
     color: var(--color-text);
-    font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
 }
