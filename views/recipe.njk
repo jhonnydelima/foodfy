@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <head>
+    <title>Foodfy - Detalhes da Receita</title>
+
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/recipes.css">
+  </head>
+{% endblock %}
+
+{% block content %}
+
+  <div id="wrapper">
+
+    <div class="recipe">
+      <div class="recipe__image-container">
+        <img src="{{ item.image }}" alt="{{ item.title }}">
+      </div>
+      <div class="recipe__content">
+        <p class="recipe__name">{{ item.title }}</p>
+        <p class="recipe__chef-name">por {{ item.author }}</p>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

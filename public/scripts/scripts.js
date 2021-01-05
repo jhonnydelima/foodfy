@@ -3,12 +3,12 @@ const recipes = document.querySelectorAll('.recipe')
 
 for ( let recipe of recipes ) {
     recipe.addEventListener("click", function() {
-        const recipeId = recipe.getAttribute('id')
+        const recipeImage = recipe.querySelector('img').src
         const recipeName = recipe.querySelector('.recipe__name').textContent
         const chefName = recipe.querySelector('.recipe__chef-name').textContent
 
         modalOverlay.classList.add('active')
-        modalOverlay.querySelector('img').src = `/public/assets/${recipeId}.png`
+        modalOverlay.querySelector('img').src = recipeImage
         modalOverlay.querySelector('.recipe-name').textContent = recipeName
         modalOverlay.querySelector('.chef-name').textContent = chefName
     })
