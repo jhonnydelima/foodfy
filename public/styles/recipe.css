@@ -1,0 +1,68 @@
+#recipes {
+  font-weight: bold;
+}
+
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.recipe__image-container img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.recipe__content {
+  text-align: center;
+}
+
+.recipe__name {
+  color: var(--color-text);
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 42px;
+  margin-bottom: 4px;
+}
+
+.recipe__chef-name {
+  color: var(--third-color);
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 50px;
+}
+
+.toggle {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.toggle h1 {
+  line-height: 28px;
+  color: var(--color-text);
+  padding-right: 8px;
+}
+
+.toggle p {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+
+.toggle__content {
+  padding: 4px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--fourth-color);
+}
+
+.toggle__content.hide {
+  /*display: none;*/
+  visibility: hidden;
+  max-height: 0px;
+  margin-bottom: 20px;
+}

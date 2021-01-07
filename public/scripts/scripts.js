@@ -1,19 +1,23 @@
-const modalOverlay = document.querySelector('.modal-overlay')
 const recipes = document.querySelectorAll('.recipe')
 
-for ( let recipe of recipes ) {
-    recipe.addEventListener("click", function() {
-        const recipeImage = recipe.querySelector('img').src
-        const recipeName = recipe.querySelector('.recipe__name').textContent
-        const chefName = recipe.querySelector('.recipe__chef-name').textContent
-
-        modalOverlay.classList.add('active')
-        modalOverlay.querySelector('img').src = recipeImage
-        modalOverlay.querySelector('.recipe-name').textContent = recipeName
-        modalOverlay.querySelector('.chef-name').textContent = chefName
+for ( let index = 0; index < recipes.length; index++ ) {
+    recipes[index].addEventListener('click', () => {
+        window.location.href = `/recipes/${index}`
     })
 }
 
-document.querySelector('.close-modal').addEventListener("click", function() {
-    modalOverlay.classList.remove('active')
-})
+const recipeDetails = document.querySelectorAll('.recipe__detail')
+
+for ( let recipeDetail of recipeDetails ) {
+    const toggleButton = recipeDetail.querySelector('.toggle__button')
+    const toggleContent = recipeDetail.querySelector('.toggle__content')
+
+    toggleButton.addEventListener('click', () => {
+        if ( toggleButton.textContent == "ESCONDER" ) {
+            toggleButton.textContent = "MOSTRAR"
+        } else {
+            toggleButton.textContent = "ESCONDER"
+        }
+        toggleContent.classList.toggle('hide')
+    })
+}
