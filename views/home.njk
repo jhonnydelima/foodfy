@@ -33,15 +33,15 @@
 
     <section class="recipes">
 
-      {% for item in items %}
+      {% for recipe in recipes %}
         {% if loop.index < 7 %}
           <div class="recipe">
             <div class="recipe__image-container">
-              <img src="{{ item.image }}" alt="{{ item.title }}">
+              <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
             </div>
             <div class="recipe__content">
-              <p class="recipe__name">{{ item.title }}</p>
-              <p class="recipe__chef-name">por {{ item.author }}</p>
+              <p class="recipe__name">{{ recipe.title }}</p>
+              <p class="recipe__chef-name">por {{ recipe.author }}</p>
             </div>
           </div>
         {% endif %}
