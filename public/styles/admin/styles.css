@@ -1,6 +1,9 @@
 :root {
-    --color-text: #111;
+    --text-color: #111;
+    --alternative-text-color: #777;
+    --details-text-color: #444;
     --default-purple: #6558C3;
+    --default-red: #DC4747;
 }
 
 * {
@@ -10,13 +13,13 @@
 }
 
 body {
+    color: var(--text-color);
     font-family: 'Roboto', sans-serif;
-    color: var(--color-text);
 }
 
 header {
-    width: 100%;
     height: 80px;
+    width: 100%;
     background-color: #111;
     padding-top: 27px;
 }
@@ -27,63 +30,213 @@ header .logo {
 }
 
 /* === CARD === */
-.card {
+.wrapper {
     width: 940px;
     margin: 55px auto;
 }
 
-.details .form-header {
+.details .form-header,
+.show-header,
+.index-header {
     display: flex;
     justify-content: space-between;
 }
 
-.details .form-header h3 {
-    font-size: 24px;
-    font-weight: bold;
+.details .form-header h2,
+.show-header h2 {
     line-height: 28px;
 }
 
-button[type="submit"] {
+button[type="submit"],
+a.button {
     background-color: var(--default-purple);
+    
     color: white;
-    width: 139px;
-    height: 37px;
-    border: none;
-    border-radius: 4px;
     font-size: 16px;
     font-weight: bold;
     line-height: 19px;
+    
+    height: 37px;
+    width: 139px;
+    
+    border: none;
+    border-radius: 4px;
+
     cursor: pointer;
 }
 
-.details .item div:nth-child(1) {
-    margin-top: 30px;
+.details .item > div:nth-child(1) {
     margin-bottom: 10px;
+    margin-top: 30px;
+    
     font-size: 16px;
-    line-height: 19px;
     font-weight: bold;
+    line-height: 19px;
 }
 
-.details .item .add-ingredient,
-.details .item .add-step {
+.details .item #add-ingredient,
+.details .item #add-step {
     color: var(--default-purple);
     font-size: 16px;
     font-weight: bold;
     line-height: 19px;
+
     display: inline-block;
+
     margin-top: 15px;
-    text-decoration: none;
+
+    cursor: pointer;
 }
 
 /* === FORM === */
 input,
 textarea {
-    width: 100%;
     height: 49px;
+    width: 100%;
+
     border: 1px solid #DDD;
     border-radius: 4px;
+    padding: 8px;
+
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 19px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.ingredient input,
+.step input {
+    margin-bottom: 10px;
+}
+
+.ingredient:last-child input,
+.step:last-child input {
+    margin-bottom: 0;
 }
 
 .aditional-info {
     height: 257px;
+}
+
+.edit-buttons .delete-button {
+    background-color: var(--default-red);
+    height: 37px;
+    width: 92px;
+    margin-right: 10px;
+}
+
+/* === SHOW === */
+a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.recipe-image {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.recipe-image img {
+    border-radius: 15px;
+}
+
+.title-wrapper {
+    margin-bottom: 31px;
+}
+
+.title-wrapper h1,
+.title-wrapper span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-wrapper h1 {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.title-wrapper span {
+    color: var(--alternative-text-color);
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.recipe-details .item div:nth-child(1) {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+
+    margin-bottom: 19px;
+    margin-top: 41px;
+}
+
+.recipe-details .item:first-child div:nth-child(1) {
+    margin-top: 0;
+}
+
+.recipe-details .item div:nth-child(2) {
+    color: var(--details-text-color);
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 28px;
+}
+
+.recipe-details .item ul {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+.recipe-details .item ul li::before {
+    content: "-";
+    margin-right: 8px;
+}
+
+.recipes-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.recipes-grid .recipe {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+}
+
+.recipes-grid .recipe img {
+    height: 80px;
+    width: 172px;
+    border-radius: 8px;
+}
+
+.recipe .recipe-content p {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+
+.recipe .recipe-content span {
+    display: flex;
+
+    color: var(--alternative-text-color);
+    font-size: 14px;
+    line-height: 16px;
+
+    margin-bottom: 10px;
+}
+
+.recipe .recipe-content a {
+    color: var(--default-purple);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-decoration: none;
 }
