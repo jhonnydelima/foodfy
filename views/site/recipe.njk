@@ -1,0 +1,63 @@
+{% extends "site/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Detalhes da Receita</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="recipe-header">
+        <div class="recipe__full-image">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        </div>
+        <div class="recipe__info">
+            <h1 class="recipe-name">{{ recipe.title }}</h1>
+            <p class="recipe-chef">por
+                {{ recipe.author }}</p>
+        </div>
+    </div>
+
+    <div class="recipe__detail">
+        <div class="toggle">
+            <h2>Ingredientes</h2>
+            <p class="toggle__button">ESCONDER</p>
+        </div>
+
+        <div class="toggle__content">
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                    <li>{{ ingredient }};</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="recipe__detail">
+        <div class="toggle">
+            <h2>Modo de preparo</h2>
+            <p class="toggle__button">ESCONDER</p>
+        </div>
+
+        <div class="toggle__content">
+            <ul>
+                {% for item in recipe.preparation %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% if recipe.information != '' %}
+        <div class="recipe__detail">
+            <div class="toggle">
+                <h2>Informações adicionais</h2>
+                <p class="toggle__button">ESCONDER</p>
+            </div>
+
+            <div class="toggle__content">
+                <p>{{ recipe.information }}</p>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
